@@ -14,8 +14,7 @@
 
 using namespace std;
 
-struct Mole
-{
+struct Mole {
     // Internal Type
     enum class State : int { Hidden = 0, Showing = 1, Animating = 2};
     
@@ -26,8 +25,7 @@ struct Mole
     bool isUp = false;
 };
 
-struct GameState
-{
+struct GameState {
     // Game Objects
     vector<Mole> moles;
     
@@ -160,8 +158,7 @@ public:
 	    
 	}
 	
-	void paintGame(Graphics& g) 
-    {
+	void paintGame(Graphics& g) {
         // Clear. 
         g.fillAll (Colour(30,30,30));
         g.setColour(Colour(240,240,240));
@@ -218,16 +215,13 @@ class MainContentComponent   : public AnimatedAppComponent
 {
 public:
     //==============================================================================
-    MainContentComponent() : game(), gameUI(game.getGameState())
-    {
+    MainContentComponent() : game(), gameUI(game.getGameState()) {
         addAndMakeVisible(gameUI);
         setSize (WINDOW_WIDTH, WINDOW_HEIGHT);
         setFramesPerSecond (60);
     }
 
-    ~MainContentComponent()
-    {
-    }
+    ~MainContentComponent() {}
 
     void update() override
     {
@@ -236,13 +230,9 @@ public:
         game.update(dt);
     }
 
-    void paint (Graphics& g) override
-    {
-        // I wonder if it repaints the child component automagically.
-    }
+    void paint (Graphics& g) override {}
 
-    void resized() override
-    {
+    void resized() override {
         gameUI.setBounds(getLocalBounds());
     }
 
