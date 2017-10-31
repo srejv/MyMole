@@ -23,13 +23,13 @@ namespace GameHelpers
 	// Clamp a rectangle to window vertically
 	void clampVertical(Rectangle<float>& r) { // ( Improvement: sending in a rect to clamp to ) 
 		float oldY = r.getY();
-		r = r.withY(juce::jlimit<float>(0.0f, WINDOW_HEIGHTF - r.getHeight(), oldY));
+		r = r.withY(jlimit<float>(0.0f, WINDOW_HEIGHTF - r.getHeight(), oldY));
 	}
 	
 	// Clamp a rectangle to window horizontally ( Improvement: sending in a rect to clamp to )
 	void clampHorizontal(Rectangle<float>& r) {
 		float oldX = r.getX();
-		r = r.withX(juce::jlimit<float>(0.0f, WINDOW_WIDTHF - r.getWidth(), oldX));
+		r = r.withX(jlimit<float>(0.0f, WINDOW_WIDTHF - r.getWidth(), oldX));
 	}
 
 	// Move with a vector. Kinda. Added it for completeness?
