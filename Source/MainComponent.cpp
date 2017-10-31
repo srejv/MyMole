@@ -7,7 +7,6 @@
 */
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "GameHelpers.h"
 #include <algorithm>
 #include <map>
 #include <deque>

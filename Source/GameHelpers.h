@@ -21,7 +21,7 @@ namespace GameHelpers
 {
 	// *  Positioning functions
 	// Clamp a rectangle to window vertically
-	void clampVertical(Rectangle<float>& r) ( Improvement: sending in a rect to clamp to ) {
+	void clampVertical(Rectangle<float>& r) { // ( Improvement: sending in a rect to clamp to ) 
 		float oldY = r.getY();
 		r = r.withY(juce::jlimit<float>(0.0f, WINDOW_HEIGHTF - r.getHeight(), oldY));
 	}
@@ -34,7 +34,7 @@ namespace GameHelpers
 
 	// Move with a vector. Kinda. Added it for completeness?
 	void move(Rectangle<float>& r, const Point<float>& amount) {
-	    r = r.withX(r.getX() + amount.getX());
+	    r = r.withX(r.getX() + amount.getX())
 	         .withY(r.getY() + amount.getY());
 	}
 	
@@ -75,6 +75,6 @@ namespace GameHelpers
 
 	// Get a "Random" colour
 	Colour getRandomColour() {
-		return Colour::fromHSV(getRandom(), getRandom() * 0.2 + 0.80f, getRandom() * 0.1f 0.9f, 1.0f);
+		return Colour::fromHSV(getRandom(), getRandom() * 0.2 + 0.80f, getRandom() * 0.1f + 0.9f, 1.0f);
 	}
 };
