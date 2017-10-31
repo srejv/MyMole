@@ -88,8 +88,7 @@ void moleMiss(Mole& mole, GameState& state) {
     // Maybe mark the mole as being missed or something.
 }
 
-class Game
-{
+class Game {
 public:
     Game() : state() {
         resetGameState(state);
@@ -144,8 +143,7 @@ private:
 };
 
 
-class GameUI : public Component
-{
+class GameUI : public Component {
 public:
 	GameUI(GameState& gameState) : gameState(gameState) {}
 	
@@ -189,19 +187,19 @@ public:
     void paintHUD(Graphics& g) {
         // Data we want to draw
         String strTimeSpent(roundToInt(gameState.timeSpent));
-	    String strScore(gameState.score);
-		String strCombo(gameState.combo);
-		
-		// Setup HUD backgroup
-		auto row(getLocalBounds().removeFromTop(32));
-		g.setColour(Colour(30,30,30));
-		g.fillRect(row); 
+        String strScore(gameState.score);
+        String strCombo(gameState.combo);
+
+        // Setup HUD backgroup
+        auto row(getLocalBounds().removeFromTop(32));
+        g.setColour(Colour(30,30,30));
+        g.fillRect(row); 
         
-		// Draw some information text
-		g.setColour(Colour(240, 240, 240));
-		g.drawText(strTimeSpent, row.removeFromLeft(200).withTrimmedLeft(8), Justification::centredLeft);
-		g.drawText(strCombo, row.removeFromRight(200).withTrimmedRight(8), Justification::centredRight);
-		g.drawText(strScore, row, Justification::centred);
+        // Draw some information text
+        g.setColour(Colour(240, 240, 240));
+        g.drawText(strTimeSpent, row.removeFromLeft(200).withTrimmedLeft(8), Justification::centredLeft);
+        g.drawText(strCombo, row.removeFromRight(200).withTrimmedRight(8), Justification::centredRight);
+        g.drawText(strScore, row, Justification::centred);
     }
 
 private:
@@ -211,8 +209,7 @@ private:
 
 
 // Main component
-class MainContentComponent   : public AnimatedAppComponent
-{
+class MainContentComponent   : public AnimatedAppComponent {
 public:
     //==============================================================================
     MainContentComponent() : game(), gameUI(game.getGameState()) {
