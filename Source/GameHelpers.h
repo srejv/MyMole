@@ -19,13 +19,12 @@
 
 namespace GameHelpers
 {
-	// *  Positioning functions
 	// Clamp a rectangle to window vertically
-	void clampVertical(Rectangle<float>& r) { // ( Improvement: sending in a rect to clamp to ) 
+	void clampVertical(Rectangle<float>& r) { // ( Improvement: sending in a rect to clamp to )
 		float oldY = r.getY();
 		r = r.withY(jlimit<float>(0.0f, WINDOW_HEIGHTF - r.getHeight(), oldY));
 	}
-	
+
 	// Clamp a rectangle to window horizontally ( Improvement: sending in a rect to clamp to )
 	void clampHorizontal(Rectangle<float>& r) {
 		float oldX = r.getX();
@@ -37,16 +36,17 @@ namespace GameHelpers
 	    r = r.withX(r.getX() + amount.getX())
 	         .withY(r.getY() + amount.getY());
 	}
-	
+
 	// Move a rectangle horizontally
 	void moveHorizontal(Rectangle<float>& r, const float amount) {
 		r = r.withX(r.getX() + amount);
 	}
+
 	// Move a rectangle vertically
 	void moveVertical(Rectangle<float>& r, const float amount) {
 		r = r.withY(r.getY() + amount);
 	}
-    
+
 	// When a rectangle is just touching outside the screen vertically
 	bool isOutsideVertically(Rectangle<float>& r) {
 		if (r.getY() < 0) return true;
@@ -75,6 +75,6 @@ namespace GameHelpers
 
 	// Get a "Random" colour
 	Colour getRandomColour() {
-		return Colour::fromHSV(getRandom(), getRandom() * 0.2 + 0.80f, getRandom() * 0.1f + 0.9f, 1.0f);
+		return Colour::fromHSV(getRandom(), getRandom() * 0.2f + 0.80f, getRandom() * 0.1f + 0.9f, 1.0f);
 	}
 };
